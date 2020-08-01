@@ -342,6 +342,10 @@ public class Collection {
         save(null, mod);
     }
 
+    public synchronized void save(String name) {
+        save(name, 0);
+    }
+
 
     public synchronized void save(String name, long mod) {
         // let the managers conditionally flush
@@ -1139,6 +1143,10 @@ public class Collection {
     /** Return a list of card ids */
     public List<Long> findCards(String search, String order) {
         return new Finder(this).findCards(search, order);
+    }
+
+    public List<Long> findCards(String search, boolean order) {
+        return findCards(search, order, null);
     }
 
     public List<Long> findCards(String search, boolean order, CollectionTask task) {
