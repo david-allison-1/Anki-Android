@@ -170,7 +170,7 @@ public class SchedV2 extends AbstractSched {
     /** we need a constructor as the constructor performs work
      * involving the dependency, so we can't use setter injection */
     @VisibleForTesting
-    SchedV2(Collection col, Time time) {
+    public SchedV2(Collection col, Time time) {
         super();
         this.mTime = time;
         mCol = col;
