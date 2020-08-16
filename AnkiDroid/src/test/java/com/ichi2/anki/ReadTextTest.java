@@ -16,9 +16,12 @@
 
 package com.ichi2.anki;
 
+import com.ichi2.testutils.NullApplication;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.annotation.Config;
 
 import androidx.annotation.CheckResult;
 import androidx.annotation.NonNull;
@@ -29,6 +32,7 @@ import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.mock;
 
 @RunWith(AndroidJUnit4.class)
+@Config(application = NullApplication.class)
 public class ReadTextTest extends RobolectricTest{
 
     @Before

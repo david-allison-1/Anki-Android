@@ -17,11 +17,13 @@
 package com.ichi2.libanki.template;
 
 import com.ichi2.anki.RobolectricTest;
+import com.ichi2.testutils.NullApplication;
 
 import org.hamcrest.Matchers;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.annotation.Config;
 
 import java.util.HashMap;
 
@@ -32,6 +34,7 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
 @RunWith(AndroidJUnit4.class)
+@Config(application = NullApplication.class)
 public class TemplateTest extends RobolectricTest {
 
     @Test

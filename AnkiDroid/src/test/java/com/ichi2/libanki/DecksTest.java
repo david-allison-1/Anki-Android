@@ -2,11 +2,13 @@ package com.ichi2.libanki;
 
 import com.ichi2.anki.RobolectricTest;
 import com.ichi2.anki.exception.DeckRenameException;
+import com.ichi2.testutils.NullApplication;
 import com.ichi2.utils.JSONObject;
 
 import org.apache.http.util.Asserts;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.annotation.Config;
 
 import java.util.List;
 
@@ -67,6 +69,7 @@ public class DecksTest extends RobolectricTest {
     }
 
     @Test
+    @Config(application = NullApplication.class)
     public void trim() {
         assertThat(Decks.strip("A\nB C\t D"), is("A\nB C\t D"));
         assertThat(Decks.strip("\n A\n\t"), is("A"));

@@ -19,10 +19,13 @@ package com.ichi2.compat.customtabs;
 import android.app.Activity;
 import android.content.pm.PackageManager;
 
+import com.ichi2.testutils.NullApplication;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
 
 import java.util.Collections;
 
@@ -42,6 +45,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(RobolectricTestRunner.class)
+@Config(application = NullApplication.class)
 public class CustomTabActivityHelperTest {
 
     @Before

@@ -1,7 +1,10 @@
 package com.ichi2.libanki;
 
+import com.ichi2.testutils.NullApplication;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.annotation.Config;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -14,6 +17,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 @RunWith(AndroidJUnit4.class)
+@Config(application = NullApplication.class)
 public class NoteTest {
     @Test
     public void noFieldDataReturnsFirstClozeIndex() {

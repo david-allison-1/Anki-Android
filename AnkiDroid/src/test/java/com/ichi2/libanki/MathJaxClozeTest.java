@@ -4,9 +4,12 @@ import android.content.Context;
 
 import com.ichi2.anki.RobolectricTest;
 import com.ichi2.libanki.template.Template;
+import com.ichi2.testutils.NullApplication;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.internal.matchers.Null;
+import org.robolectric.annotation.Config;
 
 import java.util.ArrayList;
 
@@ -25,6 +28,7 @@ import static org.junit.Assert.assertFalse;
 public class MathJaxClozeTest extends RobolectricTest {
 
     @Test
+    @Config(application = NullApplication.class)
     public void removeFormattingFromMathjax() {
         final String original_s = "{{c1::ok}} \\(2^2\\) {{c2::not ok}} \\(2^{{c3::2}}\\) \\(x^3\\) {{c4::blah}} {{c5::text with \\(x^2\\) jax}}";
 
@@ -110,6 +114,7 @@ public class MathJaxClozeTest extends RobolectricTest {
     }
 
     @Test
+    @Config(application = NullApplication.class)
     public void textContainsMathjax()
     {
         assertFalse(Template.textContainsMathjax("Hello world."));
